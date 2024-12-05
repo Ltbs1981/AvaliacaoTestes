@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatorialTestes", "FatorialTestes\FatorialTestes.csproj", "{880CAE1F-43D9-4209-B435-FBAC60EA945B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoTestes.Testes", "AvaliacaoTestes.Testes\AvaliacaoTestes.Testes.csproj", "{5F5A69ED-A9C9-4AAA-BA05-838BBFE14361}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{880CAE1F-43D9-4209-B435-FBAC60EA945B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{880CAE1F-43D9-4209-B435-FBAC60EA945B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{880CAE1F-43D9-4209-B435-FBAC60EA945B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5A69ED-A9C9-4AAA-BA05-838BBFE14361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5A69ED-A9C9-4AAA-BA05-838BBFE14361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5A69ED-A9C9-4AAA-BA05-838BBFE14361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5A69ED-A9C9-4AAA-BA05-838BBFE14361}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

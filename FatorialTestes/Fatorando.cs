@@ -6,22 +6,31 @@ using System.Threading.Tasks;
 
 namespace FatorialTestes
 {
-    internal class Fatorando
+    public class Fatorando
     {
         public int NumeroInicial { get; set; }
         public int Resultado { get; set; }
 
-        public int FatorarNumeros(int numInicial)
+        public int CalcularFatorial(int numero)
         {
-            NumeroInicial = numInicial;
-            Resultado = 1;
-
-            for (int i = numInicial; i > 1; i--)
+            if (numero < 0)
             {
-                Resultado *= i;
+                throw new ArgumentException("O número não pode ser negativo.");
             }
 
-            return Resultado;
+            if (numero == 0)
+            {
+                return 1;
+            }
+
+            int resultado = 1;
+
+            for (int i = numero; i > 1; i--)
+            {
+                resultado *= i;
+            }
+
+            return resultado;
         }
     }
 }
