@@ -3,11 +3,11 @@ using Xunit;
 
 namespace FatorialTestes.Tests
 {
-    public class FatorialTestes
+    public class FatorandoTestes
     {
         private readonly Fatorando _fatorando;
 
-        public FatorialTestes()
+        public FatorandoTestes()
         {
             _fatorando = new Fatorando();
         }
