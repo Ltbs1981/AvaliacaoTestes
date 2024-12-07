@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AvaliacaoTestes.Bank
+﻿namespace AvaliacaoTestes.Bank
 {
     public class Banco
     {
         public Dictionary<string, decimal> CalcularSaldoPorCliente(List<Transacao> transacoes)
         {
-            if (transacoes == null || !transacoes.Any())
+            if (transacoes == null)
+            {
+                throw new ArgumentNullException(nameof(transacoes), "A lista de transações não pode ser nula.");
+            }
+
+            if (!transacoes.Any())
             {
                 return new Dictionary<string, decimal>();
             }

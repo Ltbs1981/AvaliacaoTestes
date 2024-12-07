@@ -1,8 +1,4 @@
 ﻿using AvaliacaoTestes.Strings;
-using Moq;
-using System;
-using System.Collections.Generic;
-using Xunit;
 
 namespace AvaliacaoTestes.Tests
 {
