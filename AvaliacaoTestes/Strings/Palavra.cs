@@ -6,7 +6,7 @@ using System.Linq;
 //namespace OrdenacaoTestes
 namespace AvaliacaoTestes.Strings
 {
-    public class StringOrdenador
+    public class Palavra
     {
         public List<string> OrdenarStrings(List<string> palavras)
         {

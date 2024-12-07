@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace AvaliacaoTestes.Tests.Builder
 {
-    internal class StringBuilder
+    internal class PalavraBuilder
     {
         private List<string> _palavras;
         private Faker _faker;
 
-        public StringBuilder()
+        public PalavraBuilder()
         {
             _faker = new Faker();
             _palavras = new List<string>();
         }
 
-        public StringBuilder ComPalavras(List<string> palavras = null)
+        public PalavraBuilder ComPalavras(List<string> palavras = null)
         {
             if (palavras == null)
             {
@@ -26,7 +26,7 @@ namespace AvaliacaoTestes.Tests.Builder
             return this;
         }
 
-        public StringBuilder ComPalavra(string palavra)
+        public PalavraBuilder ComPalavra(string palavra)
         {
             _palavras.Add(palavra);
             return this;

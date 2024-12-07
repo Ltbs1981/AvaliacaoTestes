@@ -6,13 +6,13 @@ using Xunit;
 
 namespace AvaliacaoTestes.Tests
 {
-    public class StringOrdenadorTestes
+    public class PalavraTestes
     {
-        private readonly StringOrdenador _stringOrdenador;
+        private readonly Palavra _stringOrdenador;
 
-        public StringOrdenadorTestes()
+        public PalavraTestes()
         {
-            _stringOrdenador = new StringOrdenador();
+            _stringOrdenador = new Palavra();
         }
 
         [Fact]
