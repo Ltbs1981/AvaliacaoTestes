@@ -1,35 +1,44 @@
 ﻿using AvaliacaoTestes.Strings;
+using Bogus;
+using System.Collections.Generic;
+using Xunit;
 
 namespace AvaliacaoTestes.Tests
 {
     public class PalavraTestes
     {
         private readonly Palavra _stringOrdenador;
+        private readonly Faker _faker;
 
         public PalavraTestes()
         {
             _stringOrdenador = new Palavra();
+            _faker = new Faker();
         }
 
-        [Fact]
-        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaDesordenada()
+        [Theory]
+        [InlineData(5)]
+        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaDesordenada(int quantidadePalavras)
         {
             // Arrange
-            var palavras = new List<string> { "banana", "Abacaxi", "caju" };
-            var esperado = new List<string> { "Abacaxi", "banana", "caju" };
+            var palavras = _faker.Lorem.Words(quantidadePalavras);
+            var esperado = new List<string>(palavras);
+            esperado.Sort((x, y) => string.Compare(x, y, StringComparison.OrdinalIgnoreCase));
 
             // Act
-            var resultado = _stringOrdenador.OrdenarStrings(palavras);
+            var resultado = _stringOrdenador.OrdenarStrings(new List<string>(palavras));
 
             // Assert
             Assert.Equal(esperado, resultado);
         }
 
-        [Fact]
-        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaJaOrdenada()
+        [Theory]
+        [InlineData(3)]
+        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaJaOrdenada(int quantidadePalavras)
         {
             // Arrange
-            var palavras = new List<string> { "Abacaxi", "banana", "caju" };
+            var palavras = new List<string>(_faker.Lorem.Words(quantidadePalavras));
+            palavras.Sort((x, y) => string.Compare(x, y, StringComparison.OrdinalIgnoreCase));
 
             // Act
             var resultado = _stringOrdenador.OrdenarStrings(palavras);
@@ -38,12 +47,15 @@ namespace AvaliacaoTestes.Tests
             Assert.Equal(palavras, resultado);
         }
 
-        [Fact]
-        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaComDuplicadas()
+        [Theory]
+        [InlineData(5)]
+        public void OrdenarStrings_DeveRetornarListaOrdenada_QuandoListaComDuplicadas(int quantidadePalavras)
         {
             // Arrange
-            var palavras = new List<string> { "banana", "Abacaxi", "caju", "banana" };
-            var esperado = new List<string> { "Abacaxi", "banana", "banana", "caju" };
+            var palavras = new List<string>(_faker.Lorem.Words(quantidadePalavras));
+            palavras.AddRange(_faker.Lorem.Words(quantidadePalavras));
+            var esperado = new List<string>(palavras);
+            esperado.Sort((x, y) => string.Compare(x, y, StringComparison.OrdinalIgnoreCase));
 
             // Act
             var resultado = _stringOrdenador.OrdenarStrings(palavras);
@@ -65,11 +77,8 @@ namespace AvaliacaoTestes.Tests
         [Fact]
         public void OrdenarStrings_DeveRetornarListaVazia_QuandoListaVazia()
         {
-            // Arrange
-            var palavras = new List<string>();
-
             // Act
-            var resultado = _stringOrdenador.OrdenarStrings(palavras);
+            var resultado = _stringOrdenador.OrdenarStrings(new List<string>());
 
             // Assert
             Assert.Empty(resultado);
