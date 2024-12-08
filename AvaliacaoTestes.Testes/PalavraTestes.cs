@@ -1,7 +1,5 @@
 ﻿using AvaliacaoTestes.Strings;
 using Bogus;
-using System.Collections.Generic;
-using Xunit;
 
 namespace AvaliacaoTestes.Tests
 {
