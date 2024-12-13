@@ -5,8 +5,15 @@ namespace FatorialTestes.Tests
 {
     public class FatorandoTestes
     {
+        /*
+Declaração do campo _fatorando como somente leitura.
+Este campo armazena uma instância da classe Fatorando.
+*/
         private readonly Fatorando _fatorando;
-
+        /*
+Construtor da classe FatorandoTestes.
+Inicializa o campo _fatorando com uma nova instância da classe Fatorando.
+*/
         public FatorandoTestes()
         {
             _fatorando = new Fatorando();

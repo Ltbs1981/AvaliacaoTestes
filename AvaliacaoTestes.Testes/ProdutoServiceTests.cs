@@ -4,11 +4,6 @@ using AvaliacaoTestes.Products;
 using AvaliacaoTestes.Services;
 using AvaliacaoTestes.Testes.Mother;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AvaliacaoTestes.Testes
 {
@@ -23,7 +18,7 @@ namespace AvaliacaoTestes.Testes
             _produtoService = new ProdutoService(_produtoRepositoryMock.Object);
         }
 
-        // Dados de teste usando MemberData e IEnumerable
+        
         public static IEnumerable<object[]> DadosTesteAgrupamento
         {
             get

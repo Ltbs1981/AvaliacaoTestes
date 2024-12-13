@@ -11,6 +11,12 @@ namespace AvaliacaoTestes.Services
 {
     public class EstudanteService : IEstudanteService
     {
+        /* 
+Declara um campo somente leitura (_estudanteRepository) que armazena 
+uma instância da interface IEstudanteRepository. Este campo será 
+usado para acessar os métodos definidos na interface, relacionados 
+ao armazenamento e recuperação de dados dos estudantes.
+*/
         private readonly IEstudanteRepository _estudanteRepository;
 
         public EstudanteService(IEstudanteRepository estudanteRepository)
